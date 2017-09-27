@@ -9,18 +9,22 @@ public class Logger {
 
 
     public static void log(int message) {
-        System.out.println(PRIMITIVE + message);
+        print(PRIMITIVE + message);
     }
 
     public static void log(byte message) {
-        System.out.println(PRIMITIVE + message);
+        print(PRIMITIVE + message);
     }
 
     public static void log(char message) {
-        System.out.println(CHAR + message);
+        print(CHAR + message);
     }
 
     public static void log(String message) {
-        System.out.println(STRING + message);
+        print(STRING + message);
+    }
+
+    private static void print(String message) {
+        System.out.println(message);
     }
 }
