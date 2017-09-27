@@ -1,7 +1,5 @@
 package com.acme.edu;
 
-import javax.print.DocFlavor;
-
 public class Logger {
     private static final String PRIMITIVE = "primitive: ";
     private static final String CHAR = "char: ";
