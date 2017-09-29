@@ -6,7 +6,7 @@ import org.junit.Before;
 
 import java.io.IOException;
 
-public class SumTypedLoggerTest implements SysoutCaptureAndAssertionAbility {
+public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     //region given
     @Before
     public void setUpSystemOut() throws IOException {

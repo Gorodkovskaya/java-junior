@@ -2,7 +2,7 @@ package com.acme.edu;
 
 import static java.lang.Math.abs;
 
-public class SumTypedLogger { //sumtypedlogger
+public class Logger { //sumtypedlogger
     private static final String PRIMITIVE = "primitive: ";
     private static final String CHAR = "char: ";
     private static final String STRING = "string: ";
@@ -58,7 +58,7 @@ public class SumTypedLogger { //sumtypedlogger
             for (int i = 0; i < counter; i++) {
                 System.out.println(minConstraint);
             }
-            buffer += minConstraint * counter;  //modMaxByte
+            buffer += minConstraint * counter;
         }
         System.out.println(buffer);
     }
