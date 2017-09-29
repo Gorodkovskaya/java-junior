@@ -2,12 +2,12 @@ package com.acme.edu;
 
 import static java.lang.Math.abs;
 
-public class Logger {
+public class Logger { //sumtypedlogger
     private static final String PRIMITIVE = "primitive: ";
     private static final String CHAR = "char: ";
     private static final String STRING = "string: ";
     private static String concat = "";
-    private static long sum;
+    private static long buffer;
     private static long counter;
     private static boolean intActive;
     private static boolean byteActive;
@@ -17,12 +17,12 @@ public class Logger {
         checkActive();
         intActive = true;
 
-        sum += message;
-        if (sum > Integer.MAX_VALUE) {
+        buffer += message;
+        if (buffer > Integer.MAX_VALUE) {
             counter++;
         }
 
-        if (sum < Integer.MIN_VALUE) {
+        if (buffer < Integer.MIN_VALUE) {
             counter--;
         }
     }
@@ -47,39 +47,31 @@ public class Logger {
         System.out.println(message);
     }
 
+    private static void printBuffer(int minConstraint, int maxConstraint) {
+        if (counter > 0) {
+            for (int i = 0; i < counter; i++) {
+                System.out.println(maxConstraint);
+            }
+            buffer -= maxConstraint * counter;
+        } else if (counter < 0) {
+            counter = abs(counter);
+            for (int i = 0; i < counter; i++) {
+                System.out.println(minConstraint);
+            }
+            buffer += minConstraint * counter;
+        }
+        System.out.println(buffer);
+    }
+
     private static void checkActive() {
         if (byteActive) {
-            if (counter > 0) {
-                for (int i = 0; i < counter; i++) {
-                    System.out.println(Byte.MAX_VALUE);
-                }
-                sum -= Byte.MAX_VALUE * counter;
-            } else if (counter < 0) {
-                counter = abs(counter);
-                for (int i = 0; i < counter; i++) {
-                    System.out.println(Byte.MIN_VALUE);
-                }
-                sum += Byte.MAX_VALUE * counter;
-            }
-            System.out.println(sum);
+            printBuffer(Byte.MIN_VALUE, Byte.MAX_VALUE);
             resetState();
             return;
         }
 
         if (intActive) {
-            if (counter > 0) {
-                for (int i = 0; i < counter; i++) {
-                    System.out.println(Integer.MAX_VALUE);
-                }
-                sum -= Integer.MAX_VALUE * counter;
-            } else if (counter < 0) {
-                counter = abs(counter);
-                for (int i = 0; i < counter; i++) {
-                    System.out.println(Integer.MIN_VALUE);
-                }
-                sum += Integer.MAX_VALUE * counter;
-            }
-            System.out.println(sum);
+            printBuffer(Integer.MIN_VALUE, Integer.MAX_VALUE);
             resetState();
             return;
         }
@@ -91,7 +83,7 @@ public class Logger {
         stringActive = false;
 
         concat = "";
-        sum = 0;
+        buffer = 0;
         counter = 0;
     }
 }
