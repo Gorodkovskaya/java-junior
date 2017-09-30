@@ -38,10 +38,10 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutEquals(
-            "str 1\n" +
-            "3\n" +
-            "str 2\n" +
-            "0\n"
+            "str 1" + System.lineSeparator() +
+            "3" + System.lineSeparator() +
+            "str 2" + System.lineSeparator() +
+            "0" + System.lineSeparator()
         );
         //endregion
     }
@@ -58,11 +58,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutContains(
-            "str 1\n" +
-            "10\n" +
-            Integer.MAX_VALUE + "\n" +
-            "str 2\n" +
-            "0\n"
+            "str 1" + System.lineSeparator() +
+            "10" + System.lineSeparator() +
+            Integer.MAX_VALUE + System.lineSeparator() +
+            "str 2" + System.lineSeparator() +
+            "0" + System.lineSeparator()
         );
         //endregion
     }
@@ -79,11 +79,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutEquals(
-            "str 1\n" +
-            "10\n" +
-            Byte.MAX_VALUE + "\n" +
-            "str 2\n" +
-            "0\n"
+            "str 1" + System.lineSeparator() +
+            "10" + System.lineSeparator() +
+            Byte.MAX_VALUE + System.lineSeparator() +
+            "str 2" + System.lineSeparator() +
+            "0" + System.lineSeparator()
         );
         //endregion
     }
@@ -103,11 +103,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutEquals(
-            "str 1\n" +
-            "str 2 (x2)\n" +
-            "0\n" +
-            "str 2\n" +
-            "str 3 (x3)\n"
+            "str 1" + System.lineSeparator() +
+            "str 2 (x2)" + System.lineSeparator() +
+            "0" + System.lineSeparator() +
+            "str 2" + System.lineSeparator() +
+            "str 3 (x3)" + System.lineSeparator()
         );
         //endregion
     }
