@@ -43,11 +43,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         assertSysoutEquals(
                 Prefix.STRING.value() + lineSeparator() +
                 "str 1" + lineSeparator() +
-                        Prefix.PRIMITIVE.value() +
+                        Prefix.PRIMITIVE.value() + lineSeparator() +
                         "3" + lineSeparator() +
                         Prefix.STRING.value() + lineSeparator() +
                         "str 2" + lineSeparator() +
-                        Prefix.PRIMITIVE.value() +
+                        Prefix.PRIMITIVE.value() + lineSeparator() +
                         "0" + lineSeparator()
         );
         //endregion
@@ -68,12 +68,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         assertSysoutEquals(
                 Prefix.STRING.value() + lineSeparator() +
                         "str 1" + lineSeparator() +
-                        Prefix.PRIMITIVE.value() +
+                        Prefix.PRIMITIVE.value() + lineSeparator() +
                         Integer.MAX_VALUE + lineSeparator() +
                         "10" + lineSeparator() +
                         Prefix.STRING.value() + lineSeparator() +
                         "str 2" + lineSeparator() +
-                        Prefix.PRIMITIVE.value() +
+                        Prefix.PRIMITIVE.value() + lineSeparator() +
                         "0" + lineSeparator()
         );
 
@@ -100,12 +100,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         assertSysoutEquals(
                 Prefix.STRING.value() + lineSeparator() +
                         "str 1" + lineSeparator() +
-                        Prefix.PRIMITIVE.value() +
+                        Prefix.PRIMITIVE.value() + lineSeparator() +
                         Byte.MAX_VALUE + lineSeparator() +
                         "10" + lineSeparator() +
                         Prefix.STRING.value() + lineSeparator() +
                         "str 2" + lineSeparator() +
-                        Prefix.PRIMITIVE.value() +
+                        Prefix.PRIMITIVE.value() + lineSeparator() +
                         "0" + lineSeparator()
         );
         //endregion

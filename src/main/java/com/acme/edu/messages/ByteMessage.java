@@ -3,6 +3,7 @@ package com.acme.edu.messages;
 import com.acme.edu.Prefix;
 
 import static java.lang.Math.abs;
+import static java.lang.System.lineSeparator;
 
 public class ByteMessage implements Message {
     private static final String PREFIX = Prefix.PRIMITIVE.value();
@@ -34,7 +35,7 @@ public class ByteMessage implements Message {
     }
 
     @Override
-    public boolean sameType(Message message) {
+    public boolean isSameType(Message message) {
         return message instanceof ByteMessage;
     }
 
@@ -47,7 +48,7 @@ public class ByteMessage implements Message {
 
         for (int i = 0; i < abs(counter); i++) {
             result.append(limit);
-            result.append(System.lineSeparator());
+            result.append(lineSeparator());
         }
         result.append(buffer);
 
@@ -55,7 +56,7 @@ public class ByteMessage implements Message {
     }
 
     private String format() {
-        return PREFIX + this.toString();
+        return PREFIX + lineSeparator() + this.toString();
     }
 
     private void reset() {
