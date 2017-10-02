@@ -12,7 +12,7 @@ class LoggerController {
 
     void log(Message message) {
         if (previousMessage != null) {
-            if (!previousMessage.sameType(message)) {
+            if (!previousMessage.isSameType(message)) {
                 saver.save(previousMessage.flush());
             }
         }

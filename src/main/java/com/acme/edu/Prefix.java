@@ -1,8 +1,8 @@
 package com.acme.edu;
 
 public enum Prefix {
-    PRIMITIVE("primitive: " + System.lineSeparator()),
-    CHAR("char: " + System.lineSeparator()),
+    PRIMITIVE("primitive: "),
+    CHAR("char: "),
     STRING("string: ");
 
     private String value;

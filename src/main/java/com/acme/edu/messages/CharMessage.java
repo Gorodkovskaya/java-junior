@@ -2,6 +2,8 @@ package com.acme.edu.messages;
 
 import com.acme.edu.Prefix;
 
+import static java.lang.System.lineSeparator;
+
 public class CharMessage implements Message {
     private static final String PREFIX = Prefix.CHAR.value();
     private static StringBuilder buffer = new StringBuilder();
@@ -19,11 +21,11 @@ public class CharMessage implements Message {
 
     @Override
     public String flush() {
-        return PREFIX + this.toString();
+        return PREFIX + lineSeparator() + this.toString();
     }
 
     @Override
-    public boolean sameType(Message message) {
+    public boolean isSameType(Message message) {
         return message instanceof CharMessage;
     }
 

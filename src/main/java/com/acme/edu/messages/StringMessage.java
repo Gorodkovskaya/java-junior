@@ -2,6 +2,8 @@ package com.acme.edu.messages;
 
 import com.acme.edu.Prefix;
 
+import static java.lang.System.lineSeparator;
+
 public class StringMessage implements Message {
     private static final String PREFIX = Prefix.STRING.value();
     private static StringBuilder buffer = new StringBuilder();
@@ -34,7 +36,7 @@ public class StringMessage implements Message {
     }
 
     @Override
-    public boolean sameType(Message message) {
+    public boolean isSameType(Message message) {
         return message instanceof StringMessage;
     }
 
@@ -55,7 +57,7 @@ public class StringMessage implements Message {
     }
 
     private void appendPrevious() {
-        buffer.append(System.lineSeparator());
+        buffer.append(lineSeparator());
         buffer.append(previous);
 
         if (counter > 1) { // will look like: "duplicatedString (x2)"
