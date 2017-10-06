@@ -1,4 +1,4 @@
-package Exceptions;
+package com.acme.edu.exceptions;
 
 public class SavingException extends RuntimeException {
     public SavingException() {
