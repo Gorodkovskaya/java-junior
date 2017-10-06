@@ -1,6 +1,9 @@
 package com.acme.edu;
 
+import Exceptions.SavingException;
 import com.acme.edu.messages.Message;
+
+import java.io.IOException;
 
 class LoggerController {
     private Message previousMessage;
@@ -14,13 +17,14 @@ class LoggerController {
         if (previousMessage != null) {
             if (!previousMessage.isSameType(message)) {
                 saver.save(previousMessage.flush());
+
             }
         }
         previousMessage = message;
         message.accumulate();
     }
 
-    void stop() {
+    void stop() throws SavingException {
         saver.save(previousMessage.flush());
         previousMessage = null;
     }

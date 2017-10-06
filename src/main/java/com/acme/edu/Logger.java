@@ -1,12 +1,17 @@
 package com.acme.edu;
 
+import Exceptions.SavingException;
 import com.acme.edu.messages.ByteMessage;
 import com.acme.edu.messages.CharMessage;
 import com.acme.edu.messages.IntMessage;
 import com.acme.edu.messages.StringMessage;
 
+import java.io.IOException;
+
 public class Logger {
-    private final static LoggerController controller = new LoggerController(new ConsoleSaver());
+    private final static LoggerController controller = new LoggerController(message -> {
+        throw new SavingException();
+    });
 
     public static void log(int message) {
         controller.log(new IntMessage(message));

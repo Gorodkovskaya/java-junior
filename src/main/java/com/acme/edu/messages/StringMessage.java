@@ -13,6 +13,7 @@ public class StringMessage implements Message {
     private String value;
 
     public StringMessage(String value) {
+        if(value == null) throw new IllegalArgumentException("String message can't be 'null'");
         this.value = value;
     }
 
