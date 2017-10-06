@@ -1,9 +1,7 @@
 package com.acme.edu;
 
-import Exceptions.SavingException;
+import com.acme.edu.exceptions.SavingException;
 import com.acme.edu.messages.Message;
-
-import java.io.IOException;
 
 class LoggerController {
     private Message previousMessage;

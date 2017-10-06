@@ -1,12 +1,10 @@
 package com.acme.edu;
 
-import Exceptions.SavingException;
+import com.acme.edu.exceptions.SavingException;
 import com.acme.edu.messages.ByteMessage;
 import com.acme.edu.messages.CharMessage;
 import com.acme.edu.messages.IntMessage;
 import com.acme.edu.messages.StringMessage;
-
-import java.io.IOException;
 
 public class Logger {
     private final static LoggerController controller = new LoggerController(message -> {
