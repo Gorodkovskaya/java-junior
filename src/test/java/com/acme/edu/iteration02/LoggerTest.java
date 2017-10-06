@@ -1,5 +1,6 @@
 package com.acme.edu.iteration02;
 
+import Exceptions.SavingException;
 import com.acme.edu.Logger;
 import com.acme.edu.Prefix;
 import com.acme.edu.SysoutCaptureAndAssertionAbility;
@@ -111,6 +112,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shoudThrowNPE() {
+        Logger.log(null);
+    }
+
     @Test
     public void shouldLogSameSubsequentStringsWithoutRepeat() throws IOException {
         //region when
@@ -137,6 +143,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
                         "str 3 (x3)" + lineSeparator()
         );
         //endregion
+    }
+
+    @Test(expected = SavingException.class)
+    public void shoudThrowSavingException() {
+        Logger.log("str 1");
+        Logger.stop();
     }
 
 
